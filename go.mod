@@ -1,4 +1,4 @@
-module golang-uuid-wrapper
+module github.com/robdimsdale/uuid
 
 go 1.17
 
