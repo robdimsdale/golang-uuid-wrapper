@@ -4,7 +4,7 @@ import guuid "github.com/google/uuid"
 
 type UUID guuid.UUID
 
-func RandomUUID() (UUID, error) {
+func NewRandom() (UUID, error) {
 	u, err := guuid.NewRandom()
 	if err != nil {
 		return UUID{}, err
