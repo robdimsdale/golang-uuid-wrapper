@@ -1,9 +1,14 @@
-package golang_uuid_wrapper
+package uuid
 
-import "github.com/google/uuid"
+import guuid "github.com/google/uuid"
 
-type UUID uuid.UUID
+type UUID guuid.UUID
 
 func RandomUUID() (UUID, error) {
-	return uuid.NewRandom()
+	u, err := guuid.NewRandom()
+	if err != nil {
+		return UUID{}, err
+	}
+
+	return UUID(u), nil
 }
